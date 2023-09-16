@@ -6,8 +6,6 @@ services:
   healthCheckPath: /healthz
   envVars:
   - key: DATABASE_URL
-    fromService:
-      envVarKey: PG_URL
   - key: HASURA_GRAPHQL_ENABLE_CONSOLE
     value: true
   - key: PORT
