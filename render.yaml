@@ -5,10 +5,9 @@ services:
   autoDeploy: false
   healthCheckPath: /healthz
   envVars:
-  - key: HASURA_GRAPHQL_METADATA_DATABASE_URL
-    fromDatabase:
-      name: hasura
-      property: connectionString
+  - key: DATABASE_URL
+    fromService:
+      envVarKey: PG_URL
   - key: HASURA_GRAPHQL_ENABLE_CONSOLE
     value: true
   - key: PORT
